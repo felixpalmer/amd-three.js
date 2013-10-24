@@ -7,6 +7,8 @@ It is meant as a starting point for more involved projects involving three.js, w
 
 It is also useful for prototyping, as a lot of the boilerplate is moved out of your way.
 
+[Live demo](http://felixpalmer.github.io/amd-three.js/) of this repository can be found at http://felixpalmer.github.io/amd-three.js/
+
 Running
 =======
 
