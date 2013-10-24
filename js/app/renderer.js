@@ -1,5 +1,4 @@
 define( ["three", "container"], function( THREE, container ) {
-  var container = document.getElementById( 'threejs-container' );
   container.innerHTML = "";
   var renderer = new THREE.WebGLRenderer( { clearColor: 0x000000 } );
   renderer.sortObjects = false;
