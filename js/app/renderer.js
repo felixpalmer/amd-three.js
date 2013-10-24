@@ -1,8 +1,16 @@
-define( ["three"], function( THREE ) { 
-  renderer = new THREE.WebGLRenderer();
-  renderer.setSize( window.innerWidth, window.innerHeight );
+define( ["three", "container"], function( THREE, container ) {
   var container = document.getElementById( 'threejs-container' );
-  container.innerHTML = ""
+  container.innerHTML = "";
+  var renderer = new THREE.WebGLRenderer( { clearColor: 0x000000 } );
+  renderer.sortObjects = false;
+  renderer.autoClear = false;
   container.appendChild( renderer.domElement );
+
+  var updateSize = function() {
+    renderer.setSize( container.offsetWidth, container.offsetHeight );
+  }
+  window.addEventListener( 'resize', updateSize, false );
+  updateSize();
+
   return renderer;
 } );

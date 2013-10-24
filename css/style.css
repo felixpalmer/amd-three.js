@@ -1,0 +1,61 @@
+/* fonts */
+@font-face {
+  font-family: Hamburger;
+  src: url(../font/Hamburger.ttf);
+}
+
+/* base styles */
+
+html {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.2;
+  color: #333;
+  background: #f06;
+  background: linear-gradient(45deg, #311, #322);
+}
+
+body {
+  margin: 0;
+}
+
+h1 {
+  font-family: "Hamburger", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color:#fee;
+  font-size: 50px;
+  text-align: center;
+}
+
+p {
+  margin: 0 0 10px 0;
+}
+
+#container {
+  padding-left: 200px;
+  padding-right: 200px;
+}
+
+/* threejs container styles */
+#example-container {
+  background:#111;
+  margin: 120px auto;
+  padding: 20px;
+  min-height: 300px;
+}
+
+#threejs-container {
+  position: relative;
+  background:#000;
+  color: #666;
+  text-align: center;
+  padding: 50% 0 0 0;
+  height: 0;
+}
+
+#threejs-container canvas {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+}
