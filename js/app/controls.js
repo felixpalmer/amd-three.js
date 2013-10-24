@@ -1,4 +1,4 @@
-define( ["three", "camera"], function( THREE, camera ) { 
-  controls = new THREE.TrackballControls( camera );
+define( ["three", "camera", "container"], function( THREE, camera, container ) { 
+  controls = new THREE.TrackballControls( camera, container );
   return controls;
 } );
