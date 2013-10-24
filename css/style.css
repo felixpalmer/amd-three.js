@@ -7,12 +7,14 @@
 /* base styles */
 
 html {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 18px;
+  font-family: "Hamburger", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 24px;
   line-height: 1.2;
-  color: #333;
-  background: #f06;
-  background: linear-gradient(45deg, #311, #322);
+  color: #fed;
+  text-shadow: black 5px 5px;
+  text-align: center;
+  background: #113;
+  background: linear-gradient(45deg, #113, #101);
 }
 
 body {
@@ -20,10 +22,7 @@ body {
 }
 
 h1 {
-  font-family: "Hamburger", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color:#fee;
-  font-size: 50px;
-  text-align: center;
+  font-size: 70px;
 }
 
 p {
@@ -31,14 +30,15 @@ p {
 }
 
 #container {
-  padding-left: 200px;
-  padding-right: 200px;
+  padding-left: 300px;
+  padding-right: 300px;
+  padding-bottom: 200px;
 }
 
 /* threejs container styles */
 #example-container {
   background:#111;
-  margin: 120px auto;
+  margin: 20px auto;
   padding: 20px;
   min-height: 300px;
 }
