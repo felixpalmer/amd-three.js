@@ -16,6 +16,11 @@ Just host this directory with a webserver of your choice. You can also use the `
 
 Then visit http://localhost:8000 in your browser.
 
+Shaders
+=======
+
+Custom shaders are put in `/js/shaders` and are saved as .vert or .frag files, for ease of editing. To convert these into a require.js module, run `/js/shaders/compile.py`. This will create `/js/app/shader.js`, which will export a `shader` object with the relevant shaders attached. E.g. `test.frag` will be available as `shader.fragment.test`
+
 Structure
 =========
 
