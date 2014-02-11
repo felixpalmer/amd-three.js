@@ -1,5 +1,5 @@
-define( ["three"], function( THREE ) { 
+define( ["three"], function ( THREE ) {
   return {
-    cube: new THREE.CubeGeometry( 200, 200, 200 ),
+    cube: new THREE.CubeGeometry( 200, 200, 200 )
   };
 } );

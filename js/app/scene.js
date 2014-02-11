@@ -1,4 +1,4 @@
-define( ["three"], function( THREE ) { 
-  scene = new THREE.Scene();
+define( ["three"], function ( THREE ) {
+  var scene = new THREE.Scene();
   return scene;
 } );

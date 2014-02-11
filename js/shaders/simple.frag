@@ -1,5 +1,5 @@
-uniform vec3 uColor;
+#define faceColor vec3(1.0, 1.0, 1.0)
 
 void main() {
-  gl_FragColor = vec4(uColor, 1.0);
+  gl_FragColor = vec4(faceColor, 1.0);
 }

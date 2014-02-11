@@ -7,7 +7,7 @@ It is meant as a starting point for more involved projects involving three.js, w
 
 It is also useful for prototyping, as a lot of the boilerplate is moved out of your way.
 
-[Live demo](http://felixpalmer.github.io/amd-three.js/) of this repository can be found at http://felixpalmer.github.io/amd-three.js/
+[Live demo](http://felixpalmer.github.io/amd-three.js/) of this repository can be found at [https://github.com/felixpalmer/amd-three.js](http://felixpalmer.github.io/amd-three.js/)
 
 Running
 =======
@@ -19,7 +19,26 @@ Then visit http://localhost:8000 in your browser.
 Shaders
 =======
 
-Custom shaders are put in `/js/shaders` and are saved as .vert or .frag files, for ease of editing. To convert these into a require.js module, run `/js/shaders/compile.py`. This will create `/js/app/shader.js`, which will export a `shader` object with the relevant shaders attached. E.g. `test.frag` will be available as `shader.fragment.test`
+Custom shaders are put in `/js/shaders` and are saved as .vert or .frag files, for ease of editing. Shaders are loaded into the app using a Require.js plugin which can be found at `js/app/shader`. This allow you to get the shader code in a module like so:
+
+
+    define( ["three", "shader!simple.frag"], function ( THREE, simpleFrag ) {
+      // Value of shader is now in simpleFrag.value
+      // The shader object also supports redefinition of #define statements
+      simpleFrag.define( "faceColor", "vec3(1.0, 0, 0)" );
+      ...
+
+See `js/app/material.js` for details.
+
+#include support
+----------------
+
+The shader plugin also supports `#include` statements, allowing you to split up your shader code - or share common code. See the `js/shaders/simple.vert` for an example.
+
+Shader validation
+=================
+
+You may want to validate your shaders during development, for this you can use the [GLSL validator tool](https://github.com/felixpalmer/glsl-validator), which also supports `#include` statements.
 
 Structure
 =========

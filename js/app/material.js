@@ -1,17 +1,21 @@
-define( ["three", "shader", "texture"], function( THREE, shader, texture ) {
+define( ["three", "shader!simple.vert", "shader!simple.frag", "texture"], function ( THREE, simpleVert, simpleFrag, texture ) {
+  // Shader objects support redefining of #defines.
+  // See `simple.frag` file, where `faceColor` is already defined to be white, and we are overriding it to red here
+  simpleFrag.define( "faceColor", "vec3(1.0, 0, 0)" );
   return {
-    simple: new THREE.ShaderMaterial( {
+    bump: new THREE.MeshPhongMaterial( { bumpMap: texture.grass } ),
+    grass: new THREE.MeshBasicMaterial( { map: texture.grass } ),
+    shader: new THREE.ShaderMaterial( {
       uniforms: {
         uColor: { type: "c", value: new THREE.Color( "#ff0000" ) }
       },
-      // Note, to generate the shader files, it is necessary to run js/shaders/compile.py
-      vertexShader: shader.vertex.simple,
-      fragmentShader: shader.fragment.simple
+      vertexShader: simpleVert.value,
+      fragmentShader: simpleFrag.value
     }),
     solid: new THREE.MeshLambertMaterial( {
       color: 0x00dcdc,
       shading: THREE.FlatShading
     }),
-    grass: new THREE.MeshBasicMaterial( { map: texture.grass } )
+    wire: new THREE.MeshBasicMaterial( { wireframe: true } )
   };
 } );
