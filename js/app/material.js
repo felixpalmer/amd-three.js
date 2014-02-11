@@ -1,6 +1,8 @@
 define( ["three", "shader", "texture"], function( THREE, shader, texture ) {
   return {
-    simple: new THREE.ShaderMaterial( {
+    bump: new THREE.MeshPhongMaterial( { bumpMap: texture.grass } ),
+    grass: new THREE.MeshBasicMaterial( { map: texture.grass } ),
+    shader: new THREE.ShaderMaterial( {
       uniforms: {
         uColor: { type: "c", value: new THREE.Color( "#ff0000" ) }
       },
@@ -12,6 +14,6 @@ define( ["three", "shader", "texture"], function( THREE, shader, texture ) {
       color: 0x00dcdc,
       shading: THREE.FlatShading
     }),
-    grass: new THREE.MeshBasicMaterial( { map: texture.grass } )
+    wire: new THREE.MeshBasicMaterial( { wireframe: true } )
   };
 } );
