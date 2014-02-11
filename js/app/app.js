@@ -1,8 +1,8 @@
 define( ["three", "camera", "controls", "geometry", "light", "material", "renderer", "scene"],
-function( THREE, camera, controls, geometry, light, material, renderer, scene ) {
+function ( THREE, camera, controls, geometry, light, material, renderer, scene ) {
   var app = {
     meshes: [],
-    init: function() {
+    init: function () {
       var spacing = 300;
       var offset = 0;
       for ( var m in material ) {
@@ -15,7 +15,7 @@ function( THREE, camera, controls, geometry, light, material, renderer, scene ) 
         app.meshes.push( mesh );
       }
     },
-    animate: function() {
+    animate: function () {
       window.requestAnimationFrame( app.animate );
       controls.update();
 

@@ -2,19 +2,20 @@
 // Features
 // - Supports #include statements to combine shaders
 // - Can use the define function to change the value of #define statments in the shader
+// - Expects shaders to be in `shaders` directory, which can be configured in the require.js config
 define( {
   load: function ( name, req, onload, config ) {
     if ( config.isBuild ) {
       onload();
       return;
-    };
+    }
 
-    var Shader = function( value ) {
+    var Shader = function ( value ) {
       this.value = value;
     };
 
     // Replace the value of a #define within the shader
-    Shader.prototype.define = function( define, value ) {
+    Shader.prototype.define = function ( define, value ) {
       var regexp = new RegExp("#define " + define + " .*", "g");
       var newDefine = "#define " + define + ( value ? " " + value : "" );
       if ( this.value.match( regexp ) ) {
@@ -26,10 +27,10 @@ define( {
       }
     };
 
-    req(["text!shaders/" + name], function ( shaderContents ) {
+    req( ["text!shaders/" + name], function ( shaderContents ) {
       var shader = new Shader( shaderContents );
       var matches = [];
-      shaderContents.replace( /#include (.*)/g, function( match, includeFile ) {
+      shaderContents.replace( /#include (.*)/g, function ( match, includeFile ) {
         matches.push( includeFile );
       } );
 
@@ -40,8 +41,8 @@ define( {
         // Load included shaders and replace them in the code
         var loaded = 0;
         for ( var m = 0; m < matches.length; m++ ) {
-          (function( includeFile ) {
-            req(["shader!" + includeFile], function( includeShader ) {
+          ( function ( includeFile ) {
+            req(["shader!" + includeFile], function ( includeShader ) {
               var regexp = new RegExp("#include " + includeFile, "g");
               shader.value = shader.value.replace( regexp, includeShader.value );
               loaded++;

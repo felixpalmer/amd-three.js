@@ -1,4 +1,4 @@
-define( ["three", "shader!simple.vert", "shader!simple.frag", "texture"], function( THREE, simpleVert, simpleFrag, texture ) {
+define( ["three", "shader!simple.vert", "shader!simple.frag", "texture"], function ( THREE, simpleVert, simpleFrag, texture ) {
   return {
     bump: new THREE.MeshPhongMaterial( { bumpMap: texture.grass } ),
     grass: new THREE.MeshBasicMaterial( { map: texture.grass } ),
@@ -6,7 +6,6 @@ define( ["three", "shader!simple.vert", "shader!simple.frag", "texture"], functi
       uniforms: {
         uColor: { type: "c", value: new THREE.Color( "#ff0000" ) }
       },
-      // Note, to generate the shader files, it is necessary to run js/shaders/compile.py
       vertexShader: simpleVert.value,
       fragmentShader: simpleFrag.value
     }),
