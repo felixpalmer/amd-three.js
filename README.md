@@ -19,7 +19,7 @@ Then visit http://localhost:8000 in your browser.
 Shaders
 =======
 
-Custom shaders are put in `/js/shaders` and are saved as .vert or .frag files, for ease of editing. Shaders are loaded into the app using a Require.js plugin which can be found at `js/app/shader`. This allow you to get the shader code in a module like so:
+Custom shaders are put in `/js/shaders` and are saved as .vert or .frag files, for ease of editing. Shaders are loaded into the app using a Require.js plugin which can be found at `js/lib/shader`. This allow you to get the shader code in a module like so:
 
 
     define( ["three", "shader!simple.frag"], function ( THREE, simpleFrag ) {
