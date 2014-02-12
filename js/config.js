@@ -21,6 +21,7 @@ var require = {
     stats: '../lib/stats.min',
     // Require.js plugins
     text: '../lib/text',
+    shader: '../lib/shader',
     // Where to look for shader files
     shaders: '../shaders'
   }
