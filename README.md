@@ -30,8 +30,8 @@ Custom shaders are put in `/js/shaders` and are saved as .vert or .frag files, f
 
 See `js/app/material.js` for details.
 
-#include support
-----------------
+\#include support
+-----------------
 
 The shader plugin also supports `#include` statements, allowing you to split up your shader code - or share common code. See the `js/shaders/simple.vert` for an example.
 
